@@ -1,0 +1,16 @@
+// This is "HSP_Hakura_Speaker"sourse
+newcom spv, "Sapi.SpVoice"
+screen 0, 500, 200
+word=""
+mes "HSP_Hakura_Speaker v1.3"
+mes ""
+input word, 500, 120,9999
+if varuse(spv)=0 : dialog "SAPI not found..." : end
+title "HSP_Hakura_Speaker"
+button "Speak!", *speak
+stop
+
+*speak
+title "HSP_Hakura_Speaker Speaking>>>"+word
+spv->"Speak" word,1
+stop
